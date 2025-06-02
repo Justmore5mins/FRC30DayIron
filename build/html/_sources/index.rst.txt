@@ -7,5 +7,6 @@ FRC 30天鐵人挑戰
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   
+
    day1
+   day2
