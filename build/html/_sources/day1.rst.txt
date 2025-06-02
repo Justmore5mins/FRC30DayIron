@@ -1,4 +1,4 @@
-Day1 FRC 程式簡介
+Day1 FRC 簡介
 ========================
 
 引文
@@ -76,6 +76,46 @@ Cage有分淺的跟深的，淺的可以直接用電梯把自己撐起來，但�
 計分方式
 -------------
 
-在自動模式的時候，因為這相對考驗隊伍的程式能力，所以他給的分數也會比較多，分別在L1是3分，依序4,6,7分
+在比賽開始之前，隊伍可以在Barge選擇要掛淺或深的吊籠(cage)，還有要不要預先插一支Coral到機器上。
+
+在比賽開始後的15秒內是自動模式，隊伍的機器可以利用編程的方式讓機器離開聯盟線(3分)或是把Alage從Reef上弄下來，或是把Coral放到Reef上來得分。
+
+.. image:: /_static/AutoLeave.png
+    :width: 60%
+    :align: center
 
 .. image:: /_static/CoralScoring.png
+    :width: 60%
+    :align: center
+
+.. tip::
+    在三台機器都有離開聯盟線且至少有一台用Coral得分，可以獲得一個Auto Ranking Poin(不累加)
+
+在接下來的2分15秒內，由操控手操控機器人，他們可以把Alage飛到Net裡面(4分)，或者是從CoralStation與地板上獲取Coral並放到Reef上得分，此時L1得2分L2得3分以此類推。
+
+.. tip::
+    如果聯盟在每一層Reef上都有5個Coral的話，就會有Coral Ranking Point
+
+或者是機器也可以把Alage丟到processor(6分)讓human player把它飛到Net裡面(成功飛進去的話會有4分)
+
+.. image:: /_static/AlageProcessor.png
+    :width: 60%
+    :align: center
+
+.. tip::
+    當每個Processer都有放兩個Alage(也就是兩邊都有放兩個)的時候，除了會得到Co-op Point以外，原本是每級Reef都要放才會有的Coral Ranking Point變成只要 3級就會有
+
+在時間快要結束的時候(會有提示聲)，回到那個框框內有2分，吊淺吊籠有6分，深吊籠有12分(非常多)
+
+.. tip::
+    只要有一個機器人成功吊上深吊籠而且至少有一個機器人回到框框中，就會有Barge Ranking Point
+
+最後，得分最多的聯盟獲勝
+
+.. note::
+    Ranking Point是獨立於比賽中的計分系統，跟字面上的意思一樣，除了比賽的名次以外，Ranking Point也會被參照進排名的依據裡面。
+
+資料來源
+-----------
+
+FRC 2025 Kickoff `Video <https://www.youtube.com/watch?v=YWbxcjlY9JY>`_

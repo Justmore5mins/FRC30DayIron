@@ -7,9 +7,9 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Day1 FRC 程式簡介 | FRC 30天鐵人賽</title>
-<meta content="Day1 FRC 程式簡介 | FRC 30天鐵人賽" property="og:title"/>
-<meta content="Day1 FRC 程式簡介 | FRC 30天鐵人賽" name="twitter:title"/>
+<title>Day1 FRC 簡介 | FRC 30天鐵人賽</title>
+<meta content="Day1 FRC 簡介 | FRC 30天鐵人賽" property="og:title"/>
+<meta content="Day1 FRC 簡介 | FRC 30天鐵人賽" name="twitter:title"/>
 <link href="_static/pygments.css?v=032edb80" rel="stylesheet" type="text/css"/>
 <link href="_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
@@ -71,7 +71,7 @@
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day1 FRC 程式簡介</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day1 FRC 簡介</a></li>
 </ul>
 </nav>
 </div>
@@ -91,11 +91,11 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Day1 FRC 程式簡介</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Day1 FRC 簡介</span>
 </nav>
 <div id="content" role="main">
 <section id="day1-frc">
-<h1>Day1 FRC 程式簡介<a class="headerlink" href="#day1-frc" title="Link to this heading"><span>#</span></a></h1>
+<h1>Day1 FRC 簡介<a class="headerlink" href="#day1-frc" title="Link to this heading"><span>#</span></a></h1>
 <section id="id1">
 <h2>引文<a class="headerlink" href="#id1" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h2>
 <p>FRC 是 FIRST Robotics Competition 的縮寫，是所有高中機器人比賽的最高殿堂，從1992年開始至今已經舉辦超過30年的比賽，而今年(2024-2025 season)的主題珊瑚逃脫(Reefscape)也是一場相當盛大的賽事。</p>
@@ -147,8 +147,42 @@
 </section>
 <section id="id5">
 <h2>計分方式<a class="headerlink" href="#id5" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id5'"><span>#</span></a></h2>
-<p>在自動模式的時候，因為這相對考驗隊伍的程式能力，所以他給的分數也會比較多，分別在L1是3分，依序4,6,7分</p>
-<img alt="_images/CoralScoring.png" src="_images/CoralScoring.png"/>
+<p>在比賽開始之前，隊伍可以在Barge選擇要掛淺或深的吊籠(cage)，還有要不要預先插一支Coral到機器上。</p>
+<p>在比賽開始後的15秒內是自動模式，隊伍的機器可以利用編程的方式讓機器離開聯盟線(3分)或是把Alage從Reef上弄下來，或是把Coral放到Reef上來得分。</p>
+<a class="reference internal image-reference" href="_images/AutoLeave.png"><img alt="_images/AutoLeave.png" class="align-center" src="_images/AutoLeave.png" style="width: 60%;"/>
+</a>
+<a class="reference internal image-reference" href="_images/CoralScoring.png"><img alt="_images/CoralScoring.png" class="align-center" src="_images/CoralScoring.png" style="width: 60%;"/>
+</a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>在三台機器都有離開聯盟線且至少有一台用Coral得分，可以獲得一個Auto Ranking Poin(不累加)</p>
+</div>
+<p>在接下來的2分15秒內，由操控手操控機器人，他們可以把Alage飛到Net裡面(4分)，或者是從CoralStation與地板上獲取Coral並放到Reef上得分，此時L1得2分L2得3分以此類推。</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>如果聯盟在每一層Reef上都有5個Coral的話，就會有Coral Ranking Point</p>
+</div>
+<p>或者是機器也可以把Alage丟到processor(6分)讓human player把它飛到Net裡面(成功飛進去的話會有4分)</p>
+<a class="reference internal image-reference" href="_images/AlageProcessor.png"><img alt="_images/AlageProcessor.png" class="align-center" src="_images/AlageProcessor.png" style="width: 60%;"/>
+</a>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>當每個Processer都有放兩個Alage(也就是兩邊都有放兩個)的時候，除了會得到Co-op Point以外，原本是每級Reef都要放才會有的Coral Ranking Point變成只要 3級就會有</p>
+</div>
+<p>在時間快要結束的時候(會有提示聲)，回到那個框框內有2分，吊淺吊籠有6分，深吊籠有12分(非常多)</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>只要有一個機器人成功吊上深吊籠而且至少有一個機器人回到框框中，就會有Barge Ranking Point</p>
+</div>
+<p>最後，得分最多的聯盟獲勝</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ranking Point是獨立於比賽中的計分系統，跟字面上的意思一樣，除了比賽的名次以外，Ranking Point也會被參照進排名的依據裡面。</p>
+</div>
+</section>
+<section id="id6">
+<h2>資料來源<a class="headerlink" href="#id6" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id6'"><span>#</span></a></h2>
+<p>FRC 2025 Kickoff <a class="reference external" href="https://www.youtube.com/watch?v=YWbxcjlY9JY">Video</a></p>
 </section>
 </section>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
@@ -166,6 +200,7 @@
 </ul>
 </li>
 <li><a :data-current="activeSection === '#id5'" class="reference internal" href="#id5">計分方式</a></li>
+<li><a :data-current="activeSection === '#id6'" class="reference internal" href="#id6">資料來源</a></li>
 </ul>
 </div>
 </aside>
