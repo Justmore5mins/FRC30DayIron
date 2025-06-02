@@ -76,10 +76,14 @@ Cage有分淺的跟深的，淺的可以直接用電梯把自己撐起來，但�
 計分方式
 -------------
 
-在Auto一開始的時候，機器人有離開聯盟線就有3分(2台6分以此類推)，假設三台都離開而且至少有一個機器有在Coral上得分，就可以拿到一個Auto Ranking Point.
+在比賽開始之前，隊伍可以在Barge選擇要掛淺或深的吊籠(cage)，還有要不要預先插一支Coral到機器上。
 
-而在Auto的過程中，每個Coral的L1分別是3分，L2 4分，以此類推
+在比賽開始後的15秒內是自動模式，隊伍的機器可以利用編程的方式讓機器離開聯盟線(3分)或是把Alage從Reef上弄下來，或是把Coral放到Reef上來得分
+
+.. image:: /_static/AutoLeave.png
+    :width: 60%
+    :align: center
 
 .. image:: /_static/CoralScoring.png
-
-還有另外一種得分方式是拿到球
+    :width: 60%
+    :align: center
