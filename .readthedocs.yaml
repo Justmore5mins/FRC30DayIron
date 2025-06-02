@@ -14,8 +14,9 @@ build:
 sphinx:
    configuration: source/conf.py
 
-install:
-  - requirements: source/requirements.txt
+python:
+  install:
+    - requirements: source/requirements.txt
 
 # Optionally, but recommended,
 # declare the Python requirements required to build your documentation
