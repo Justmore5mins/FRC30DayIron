@@ -87,3 +87,7 @@ body[data-theme="dark"] .sphinx-tabs-tab[aria-selected="true"] {
   border-bottom: 2px solid rgb(50, 50, 50);
   background-color: rgb(50, 50, 50);
 }
+
+.sphinx-tabs-panel {
+    background: none;
+}

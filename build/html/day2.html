@@ -7,15 +7,17 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Day 2 程式組在幹嘛 | FRC 30天鐵人賽</title>
-<meta content="Day 2 程式組在幹嘛 | FRC 30天鐵人賽" property="og:title"/>
-<meta content="Day 2 程式組在幹嘛 | FRC 30天鐵人賽" name="twitter:title"/>
+<title>Day 2 程式組要幹嘛 | FRC 30天鐵人賽</title>
+<meta content="Day 2 程式組要幹嘛 | FRC 30天鐵人賽" property="og:title"/>
+<meta content="Day 2 程式組要幹嘛 | FRC 30天鐵人賽" name="twitter:title"/>
 <link href="_static/pygments.css?v=032edb80" rel="stylesheet" type="text/css"/>
 <link href="_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
 <link href="_static/sphinx-design.min.css?v=95c83b7e" rel="stylesheet" type="text/css"/>
+<link href="_static/tabs.css?v=b6aa3ec1" rel="stylesheet" type="text/css"/>
 <link href="_static/awesome-sphinx-design.css?v=15e0fffa" rel="stylesheet" type="text/css"/>
 <link href="search.html" rel="search" title="Search"/>
 <link href="genindex.html" rel="index" title="Index"/>
+<link href="day2.5.html" rel="next" title="Day 2.5 新建專案"/>
 <link href="day1.html" rel="prev" title="Day 1 FRC 簡介"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
@@ -72,7 +74,8 @@
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="day1.html">Day 1 FRC 簡介</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 2 程式組在幹嘛</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Day 2 程式組要幹嘛</a></li>
+<li class="toctree-l1"><a class="reference internal" href="day2.5.html">Day 2.5 新建專案</a></li>
 </ul>
 </nav>
 </div>
@@ -92,13 +95,240 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Day 2 程式組在幹嘛</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Day 2 程式組要幹嘛</span>
 </nav>
 <div id="content" role="main">
 <section id="day-2">
-<h1>Day 2 程式組在幹嘛<a class="headerlink" href="#day-2" title="Link to this heading"><span>#</span></a></h1>
+<h1>Day 2 程式組要幹嘛<a class="headerlink" href="#day-2" title="Link to this heading"><span>#</span></a></h1>
+<p>程式組基本上就是在寫程式讓機器人動起來，目前官方提供的語言有Java, C++跟Python, 不過因為Java是FRC中網路資源最多的語言(碾壓式)，所以這幾次穩張都是以Java為主。</p>
+<section id="id1">
+<h2>新建專案<a class="headerlink" href="#id1" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id1'"><span>#</span></a></h2>
+<p>在打開WPI VScode之後，按下F1/ctrl+shift+p/cmd+shift+p叫出指令列，然後打Create New Project，他就會跳到一個頁面長這樣</p>
+<a class="reference internal image-reference" href="_images/NewProject.png"><img alt="_images/NewProject.png" class="align-center" src="_images/NewProject.png" style="width: 60%;"/>
+</a>
+<p>在最上面那一條可以選的地方，先選擇Template&gt;Java，接下來就是要展開來講的地方了</p>
 </section>
+<section id="frc">
+<h2>FRC的程式架構<a class="headerlink" href="#frc" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#frc'"><span>#</span></a></h2>
+<section id="timed-based">
+<h3>Timed Based<a class="headerlink" href="#timed-based" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#timed-based'"><span>#</span></a></h3>
+<p>Timed Based 是最基礎的程式架構，他雖然簡單直覺，但是在大程式(比如說向量底盤)就會變得非常地難以管理與除錯，所以這時候就有另外一個架構就誕生了</p>
+</section>
+<section id="command-based">
+<h3>Command Based<a class="headerlink" href="#command-based" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#command-based'"><span>#</span></a></h3>
+<p>Command Based 是目前最常見的程式架構，以指令為基礎控制，將每個功能都模組化，這就是Command Based要做的事情(雖然他是從Timed延伸過來就是了)</p>
+</section>
+<section id="id2">
+<h3>程式範例<a class="headerlink" href="#id2" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#id2'"><span>#</span></a></h3>
+<p>(以KOP底盤舉例)</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Timed Based</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Command Based</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="c1">// Copyright (c) FIRST and other WPILib contributors.</span>
+</span><span id="line-2"><span class="c1">// Open Source Software; you can modify and/or share it under the terms of</span>
+</span><span id="line-3"><span class="c1">// the WPILib BSD license file in the root directory of this project.</span>
+</span><span id="line-4">
+</span><span id="line-5"><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot</span><span class="p">;</span>
+</span><span id="line-6">
+</span><span id="line-7"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkMax</span><span class="p">;</span>
+</span><span id="line-8"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkBase.PersistMode</span><span class="p">;</span>
+</span><span id="line-9"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkBase.ResetMode</span><span class="p">;</span>
+</span><span id="line-10"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkLowLevel.MotorType</span><span class="p">;</span>
+</span><span id="line-11"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkMaxConfig</span><span class="p">;</span>
+</span><span id="line-12"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkBaseConfig.IdleMode</span><span class="p">;</span>
+</span><span id="line-13">
+</span><span id="line-14"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj.Joystick</span><span class="p">;</span>
+</span><span id="line-15"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj.TimedRobot</span><span class="p">;</span>
+</span><span id="line-16">
+</span><span id="line-17"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Robot</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">TimedRobot</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-18">
+</span><span id="line-19"><span class="kd">public</span><span class="w"> </span><span class="n">SparkMax</span><span class="w"> </span><span class="n">LeftMotor</span><span class="p">,</span><span class="w"> </span><span class="n">RightMotor</span><span class="p">;</span>
+</span><span id="line-20"><span class="kd">private</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="w"> </span><span class="n">LeftConfig</span><span class="p">,</span><span class="w"> </span><span class="n">RightConfig</span><span class="p">;</span>
+</span><span id="line-21"><span class="kd">public</span><span class="w"> </span><span class="n">Joystick</span><span class="w"> </span><span class="n">joystick</span><span class="p">;</span>
+</span><span id="line-22">
+</span><span id="line-23"><span class="kd">public</span><span class="w"> </span><span class="nf">Robot</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-24"><span class="w">    </span><span class="n">LeftMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMax</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">MotorType</span><span class="p">.</span><span class="na">kBrushless</span><span class="p">);</span><span class="w"> </span><span class="c1">//範例馬達，ID為0&lt;--要另外設定</span>
+</span><span id="line-25"><span class="w">    </span><span class="n">RightMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMax</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">MotorType</span><span class="p">.</span><span class="na">kBrushless</span><span class="p">);</span><span class="w"> </span><span class="c1">//範例馬達，ID為1&lt;--是唯一的</span>
+</span><span id="line-26"><span class="w">    </span><span class="n">LeftConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="p">();</span>
+</span><span id="line-27"><span class="w">    </span><span class="n">RightConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="p">();</span>
+</span><span id="line-28">
+</span><span id="line-29"><span class="w">    </span><span class="n">LeftConfig</span>
+</span><span id="line-30"><span class="w">    </span><span class="p">.</span><span class="na">idleMode</span><span class="p">(</span><span class="n">IdleMode</span><span class="p">.</span><span class="na">kBrake</span><span class="p">)</span><span class="w"> </span><span class="c1">//馬達的模式，急煞或是自然</span>
+</span><span id="line-31"><span class="w">    </span><span class="p">.</span><span class="na">inverted</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="c1">//馬達反轉</span>
+</span><span id="line-32">
+</span><span id="line-33"><span class="w">    </span><span class="n">RightConfig</span>
+</span><span id="line-34"><span class="w">    </span><span class="p">.</span><span class="na">idleMode</span><span class="p">(</span><span class="n">IdleMode</span><span class="p">.</span><span class="na">kBrake</span><span class="p">)</span>
+</span><span id="line-35"><span class="w">    </span><span class="p">.</span><span class="na">inverted</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span><span id="line-36">
+</span><span id="line-37"><span class="w">    </span><span class="n">LeftMotor</span><span class="p">.</span><span class="na">configure</span><span class="p">(</span><span class="n">LeftConfig</span><span class="p">,</span><span class="w"> </span><span class="n">ResetMode</span><span class="p">.</span><span class="na">kResetSafeParameters</span><span class="p">,</span><span class="w"> </span><span class="n">PersistMode</span><span class="p">.</span><span class="na">kPersistParameters</span><span class="p">);</span><span class="w"> </span><span class="c1">//把設定鬥到馬達上</span>
+</span><span id="line-38"><span class="w">    </span><span class="n">RightMotor</span><span class="p">.</span><span class="na">configure</span><span class="p">(</span><span class="n">RightConfig</span><span class="p">,</span><span class="w"> </span><span class="n">ResetMode</span><span class="p">.</span><span class="na">kResetSafeParameters</span><span class="p">,</span><span class="w"> </span><span class="n">PersistMode</span><span class="p">.</span><span class="na">kPersistParameters</span><span class="p">);</span>
+</span><span id="line-39"><span class="w">    </span><span class="n">joystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Joystick</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="line-40"><span class="p">}</span>
+</span><span id="line-41">
+</span><span id="line-42"><span class="nd">@Override</span>
+</span><span id="line-43"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">robotPeriodic</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-44">
+</span><span id="line-45"><span class="nd">@Override</span>
+</span><span id="line-46"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">autonomousInit</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-47">
+</span><span id="line-48"><span class="nd">@Override</span>
+</span><span id="line-49"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">autonomousPeriodic</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-50">
+</span><span id="line-51"><span class="nd">@Override</span>
+</span><span id="line-52"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">teleopInit</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-53">
+</span><span id="line-54"><span class="nd">@Override</span>
+</span><span id="line-55"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">teleopPeriodic</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">//手動模式他會做的事</span>
+</span><span id="line-56"><span class="w">    </span><span class="n">LeftMotor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">joystick</span><span class="p">.</span><span class="na">getRawAxis</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">joystick</span><span class="p">.</span><span class="na">getRawAxis</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</span><span id="line-57"><span class="w">    </span><span class="n">RightMotor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">joystick</span><span class="p">.</span><span class="na">getRawAxis</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">joystick</span><span class="p">.</span><span class="na">getRawAxis</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</span><span id="line-58"><span class="p">}</span>
+</span><span id="line-59">
+</span><span id="line-60"><span class="nd">@Override</span>
+</span><span id="line-61"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">disabledInit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-62"><span class="w">    </span><span class="n">LeftMotor</span><span class="p">.</span><span class="na">stopMotor</span><span class="p">();</span>
+</span><span id="line-63"><span class="w">    </span><span class="n">RightMotor</span><span class="p">.</span><span class="na">stopMotor</span><span class="p">();</span>
+</span><span id="line-64"><span class="p">}</span>
+</span><span id="line-65">
+</span><span id="line-66"><span class="nd">@Override</span>
+</span><span id="line-67"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">disabledPeriodic</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-68">
+</span><span id="line-69"><span class="nd">@Override</span>
+</span><span id="line-70"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testInit</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-71">
+</span><span id="line-72"><span class="nd">@Override</span>
+</span><span id="line-73"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">testPeriodic</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-74">
+</span><span id="line-75"><span class="nd">@Override</span>
+</span><span id="line-76"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">simulationInit</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-77">
+</span><span id="line-78"><span class="nd">@Override</span>
+</span><span id="line-79"><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">simulationPeriodic</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span></code></pre></div>
+</div>
+<p>}</p>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="c1">//Constants.java</span>
+</span><span id="line-2"><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot</span><span class="p">;</span>
+</span><span id="line-3">
+</span><span id="line-4"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Constants</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-5"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">LeftMotorID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="line-6"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">RightMotorID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="line-7"><span class="p">}</span>
+</span><span id="line-8">
+</span><span id="line-9"><span class="c1">//subsystems/KOPChassis.java</span>
+</span><span id="line-10"><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems</span><span class="p">;</span>
+</span><span id="line-11">
+</span><span id="line-12"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkMax</span><span class="p">;</span>
+</span><span id="line-13"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkBase.PersistMode</span><span class="p">;</span>
+</span><span id="line-14"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkBase.ResetMode</span><span class="p">;</span>
+</span><span id="line-15"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkLowLevel.MotorType</span><span class="p">;</span>
+</span><span id="line-16"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkMaxConfig</span><span class="p">;</span>
+</span><span id="line-17"><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkBaseConfig.IdleMode</span><span class="p">;</span>
+</span><span id="line-18">
+</span><span id="line-19"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+</span><span id="line-20"><span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.Constants</span><span class="p">;</span>
+</span><span id="line-21">
+</span><span id="line-22"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">KOPChassis</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SubsystemBase</span><span class="p">{</span>
+</span><span id="line-23"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">SparkMax</span><span class="w"> </span><span class="n">LeftMotor</span><span class="p">,</span><span class="w"> </span><span class="n">RightMotor</span><span class="p">;</span>
+</span><span id="line-24"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="w"> </span><span class="n">LeftConfig</span><span class="p">,</span><span class="w"> </span><span class="n">RightConfig</span><span class="p">;</span>
+</span><span id="line-25">
+</span><span id="line-26"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">KOPChassis</span><span class="p">(){</span>
+</span><span id="line-27"><span class="w">        </span><span class="n">LeftMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMax</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="na">LeftMotorID</span><span class="p">,</span><span class="w"> </span><span class="n">MotorType</span><span class="p">.</span><span class="na">kBrushless</span><span class="p">);</span>
+</span><span id="line-28"><span class="w">        </span><span class="n">RightMotor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMax</span><span class="p">(</span><span class="n">Constants</span><span class="p">.</span><span class="na">RightMotorID</span><span class="p">,</span><span class="w"> </span><span class="n">MotorType</span><span class="p">.</span><span class="na">kBrushless</span><span class="p">);</span>
+</span><span id="line-29">
+</span><span id="line-30"><span class="w">        </span><span class="n">LeftConfig</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="p">();</span>
+</span><span id="line-31"><span class="w">        </span><span class="n">RightConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="p">();</span>
+</span><span id="line-32">
+</span><span id="line-33"><span class="w">        </span><span class="n">LeftConfig</span>
+</span><span id="line-34"><span class="w">            </span><span class="p">.</span><span class="na">idleMode</span><span class="p">(</span><span class="n">IdleMode</span><span class="p">.</span><span class="na">kBrake</span><span class="p">)</span>
+</span><span id="line-35"><span class="w">            </span><span class="p">.</span><span class="na">inverted</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</span><span id="line-36">
+</span><span id="line-37"><span class="w">        </span><span class="n">RightConfig</span>
+</span><span id="line-38"><span class="w">            </span><span class="p">.</span><span class="na">idleMode</span><span class="p">(</span><span class="n">IdleMode</span><span class="p">.</span><span class="na">kBrake</span><span class="p">)</span>
+</span><span id="line-39"><span class="w">            </span><span class="p">.</span><span class="na">inverted</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span><span id="line-40">
+</span><span id="line-41"><span class="w">        </span><span class="n">LeftMotor</span><span class="p">.</span><span class="na">configure</span><span class="p">(</span><span class="n">LeftConfig</span><span class="p">,</span><span class="w"> </span><span class="n">ResetMode</span><span class="p">.</span><span class="na">kResetSafeParameters</span><span class="p">,</span><span class="w"> </span><span class="n">PersistMode</span><span class="p">.</span><span class="na">kPersistParameters</span><span class="p">);</span>
+</span><span id="line-42"><span class="w">        </span><span class="n">RightMotor</span><span class="p">.</span><span class="na">configure</span><span class="p">(</span><span class="n">RightConfig</span><span class="p">,</span><span class="w"> </span><span class="n">ResetMode</span><span class="p">.</span><span class="na">kResetSafeParameters</span><span class="p">,</span><span class="w"> </span><span class="n">PersistMode</span><span class="p">.</span><span class="na">kPersistParameters</span><span class="p">);</span>
+</span><span id="line-43"><span class="w">    </span><span class="p">}</span>
+</span><span id="line-44">
+</span><span id="line-45"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">drive</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">speed</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rotation</span><span class="p">){</span>
+</span><span id="line-46"><span class="w">        </span><span class="n">LeftMotor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">speed</span><span class="o">+</span><span class="n">rotation</span><span class="p">);</span>
+</span><span id="line-47"><span class="w">        </span><span class="n">RightMotor</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">speed</span><span class="o">-</span><span class="n">rotation</span><span class="p">);</span>
+</span><span id="line-48"><span class="w">    </span><span class="p">}</span>
+</span><span id="line-49"><span class="p">}</span>
+</span><span id="line-50">
+</span><span id="line-51"><span class="c1">//commands/ChassisCmd.java</span>
+</span><span id="line-52"><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.commands</span><span class="p">;</span>
+</span><span id="line-53">
+</span><span id="line-54"><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.Supplier</span><span class="p">;</span>
+</span><span id="line-55">
+</span><span id="line-56"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.Command</span><span class="p">;</span>
+</span><span id="line-57"><span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.KOPChassis</span><span class="p">;</span>
+</span><span id="line-58">
+</span><span id="line-59"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ChassisCmd</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Command</span><span class="p">{</span>
+</span><span id="line-60"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">KOPChassis</span><span class="w"> </span><span class="n">chassis</span><span class="p">;</span>
+</span><span id="line-61"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DriveSpeedFunc</span><span class="p">,</span><span class="w"> </span><span class="n">RotationSpeedFunc</span><span class="p">;</span>
+</span><span id="line-62">
+</span><span id="line-63"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ChassisCmd</span><span class="p">(</span><span class="n">KOPChassis</span><span class="w"> </span><span class="n">chassis</span><span class="p">,</span><span class="w"> </span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">DriveSpeedFunc</span><span class="p">,</span><span class="w"> </span><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">Double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">RotationSpeedFunc</span><span class="p">){</span>
+</span><span id="line-64"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">chassis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chassis</span><span class="p">;</span>
+</span><span id="line-65"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">DriveSpeedFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriveSpeedFunc</span><span class="p">;</span>
+</span><span id="line-66"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">RotationSpeedFunc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RotationSpeedFunc</span><span class="p">;</span>
+</span><span id="line-67">
+</span><span id="line-68"><span class="w">        </span><span class="n">addRequirements</span><span class="p">(</span><span class="n">chassis</span><span class="p">);</span>
+</span><span id="line-69"><span class="w">    </span><span class="p">}</span>
+</span><span id="line-70">
+</span><span id="line-71"><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="line-72"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">execute</span><span class="p">(){</span>
+</span><span id="line-73"><span class="w">        </span><span class="n">chassis</span><span class="p">.</span><span class="na">drive</span><span class="p">(</span><span class="n">DriveSpeedFunc</span><span class="p">.</span><span class="na">get</span><span class="p">(),</span><span class="w"> </span><span class="n">RotationSpeedFunc</span><span class="p">.</span><span class="na">get</span><span class="p">());</span>
+</span><span id="line-74"><span class="w">    </span><span class="p">}</span>
+</span><span id="line-75"><span class="p">}</span>
+</span><span id="line-76">
+</span><span id="line-77"><span class="c1">//RobotContainer.java</span>
+</span><span id="line-78">
+</span><span id="line-79"><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot</span><span class="p">;</span>
+</span><span id="line-80">
+</span><span id="line-81"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj.Joystick</span><span class="p">;</span>
+</span><span id="line-82"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.Command</span><span class="p">;</span>
+</span><span id="line-83"><span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.Commands</span><span class="p">;</span>
+</span><span id="line-84"><span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.commands.ChassisCmd</span><span class="p">;</span>
+</span><span id="line-85"><span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.KOPChassis</span><span class="p">;</span>
+</span><span id="line-86">
+</span><span id="line-87"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RobotContainer</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-88"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">KOPChassis</span><span class="w"> </span><span class="n">chassis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">KOPChassis</span><span class="p">();</span>
+</span><span id="line-89"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Joystick</span><span class="w"> </span><span class="n">joystick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Joystick</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="line-90">
+</span><span id="line-91"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RobotContainer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-92"><span class="w">        </span><span class="n">chassis</span><span class="p">.</span><span class="na">setDefaultCommand</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">ChassisCmd</span><span class="p">(</span>
+</span><span id="line-93"><span class="w">        </span><span class="n">chassis</span><span class="p">,</span>
+</span><span id="line-94"><span class="w">        </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">joystick</span><span class="p">.</span><span class="na">getRawAxis</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+</span><span id="line-95"><span class="w">        </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">joystick</span><span class="p">.</span><span class="na">getRawAxis</span><span class="p">(</span><span class="mi">0</span><span class="p">)));</span>
+</span><span id="line-96">
+</span><span id="line-97"><span class="w">        </span><span class="n">configureBindings</span><span class="p">();</span>
+</span><span id="line-98"><span class="w">    </span><span class="p">}</span>
+</span><span id="line-99">
+</span><span id="line-100"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">configureBindings</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="line-101">
+</span><span id="line-102"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Command</span><span class="w"> </span><span class="nf">getAutonomousCommand</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="line-103"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Commands</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"No autonomous command configured"</span><span class="p">);</span>
+</span><span id="line-104"><span class="w">    </span><span class="p">}</span>
+</span><span id="line-105"><span class="p">}</span>
+</span></code></pre></div>
+</div>
 </div></div>
+<p>除了底盤的程式編寫以外，還有其他機構與視覺辨識等項目，非常的多呢。</p>
+</section>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#id1'" class="reference internal" href="#id1">新建專案</a></li>
+<li><a :data-current="activeSection === '#frc'" class="reference internal" href="#frc">FRC的程式架構</a><ul>
+<li><a :data-current="activeSection === '#timed-based'" class="reference internal" href="#timed-based">Timed Based</a></li>
+<li><a :data-current="activeSection === '#command-based'" class="reference internal" href="#command-based">Command Based</a></li>
+<li><a :data-current="activeSection === '#id2'" class="reference internal" href="#id2">程式範例</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside>
 </main>
 </div>
 </div><footer class="py-6 border-t border-border md:py-0">
@@ -114,5 +344,6 @@
 <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
 <script defer="defer" src="_static/theme.js?v=073f68d9"></script>
 <script src="_static/design-tabs.js?v=f930bc37"></script>
+<script src="_static/tabs.js?v=3030b3cb"></script>
 </body>
 </html>
